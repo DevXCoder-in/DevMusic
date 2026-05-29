@@ -56,8 +56,9 @@ class Config:
         self.SESSION3: str = getenv("STRING_SESSION3", "")
 
         # ============ SUPPORT LINKS ============
-        self.SUPPORT_CHANNEL: str = getenv("SUPPORT_CHANNEL", "")
-        self.SUPPORT_CHAT: str = getenv("SUPPORT_CHAT", "")
+        self.SUPPORT_CHANNEL: str = getenv(
+            "SUPPORT_CHANNEL", "https://t.me/elevenytsmusic")
+        self.SUPPORT_CHAT: str = getenv("SUPPORT_CHAT", "https://t.me/elevenytschats")
 
         # ============ EXCLUDED CHATS ============
         # Parse comma-separated chat IDs that assistants should never leave
@@ -75,9 +76,9 @@ class Config:
         # Maximum video height (in pixels) when downloading /vplay media
         self.VIDEO_MAX_HEIGHT: int = self._parse_video_height()
 
-        # ============ ARTISTBOTS API CONFIGURATION ============
+        # ============ ARTISTBOTS API CONFIGURATION (NEW) ============
         # ArtistBots YouTube download API URL @Artistapibot
-        self.ARTISTBOTS_API_URL: str = getenv("ARTISTBOTS_API_URL", "")
+        self.ARTISTBOTS_API_URL: str = getenv("ARTISTBOTS_API_URL", "https://artistbots-api.onrender.com")
         
         # ArtistBots API Key for authentication @Artistapibot
         self.ARTISTBOTS_KEY: str = getenv("ARTISTBOTS_KEY", "")
@@ -100,10 +101,16 @@ class Config:
 
         # ============ IMAGE URLS ============
         # URLs for various bot images
-        self.DEFAULT_THUMB: str = getenv("DEFAULT_THUMB", "https://files.catbox.moe/nhg5ko.png")
-        self.PING_IMG: str = getenv("PING_IMG", "https://files.catbox.moe/nhg5ko.png")    
-        self.START_IMG: str = getenv("START_IMG", "https://files.catbox.moe/nhg5ko.png")  
-        self.RADIO_IMG: str = getenv("RADIO_IMG", "https://files.catbox.moe/nhg5ko.png")    
+        self.DEFAULT_THUMB: str = getenv(
+            "DEFAULT_THUMB",
+            "https://files.catbox.moe/nhg5ko.png"  
+        )
+        self.PING_IMG: str = getenv(
+            "PING_IMG", "https://files.catbox.moe/nhg5ko.png")    
+        self.START_IMG: str = getenv(
+            "START_IMG", "https://files.catbox.moe/nhg5ko.png")  
+        self.RADIO_IMG: str = getenv(
+            "RADIO_IMG", "https://files.catbox.moe/nhg5ko.png")    
 
         # ============ MODERATION ============
         # List of usernames to exclude from admin mentions
@@ -200,6 +207,10 @@ class Config:
                 f"❌ Missing required environment variables: {', '.join(missing)}\n"
                 f"Please check your .env file and ensure all required variables are set."
             )
+        
+        # Optional: Validate ArtistBots API configuration if enabled
+        if self.ENABLE_API and not self.ARTISTBOTS_KEY:
+            print("⚠️ Warning: ENABLE_API is True but ARTISTBOTS_KEY is not set. API features may not work.")
 
 
 # Global config instance
