@@ -43,8 +43,8 @@ class Config:
         self.SESSION3: str = getenv("STRING_SESSION3", "")
 
         # Support Links
-        self.SUPPORT_CHANNEL: str = getenv("SUPPORT_CHANNEL", "https://t.me/elevenytsmusic")
-        self.SUPPORT_CHAT: str = getenv("SUPPORT_CHAT", "https://t.me/elevenytschats")
+        self.SUPPORT_CHANNEL: str = getenv("SUPPORT_CHANNEL", "https://t.me/DevXHosting1")
+        self.SUPPORT_CHAT: str = getenv("SUPPORT_CHAT", "https://t.me/cheatmods_chat")
 
         # Excluded Chats
         self.EXCLUDED_CHATS: List[int] = self._parse_excluded_chats()
@@ -68,10 +68,10 @@ class Config:
         self.COOKIES_URL: List[str] = self._parse_cookies()
 
         # Images
-        self.DEFAULT_THUMB: str = getenv("DEFAULT_THUMB", "https://files.catbox.moe/zlmv6v.png")
-        self.PING_IMG: str = getenv("PING_IMG", "https://files.catbox.moe/zlmv6v.png")
-        self.START_IMG: str = getenv("START_IMG", "https://files.catbox.moe/zlmv6v.png")
-        self.RADIO_IMG: str = getenv("RADIO_IMG", "https://files.catbox.moe/zlmv6v.png")
+        self.DEFAULT_THUMB: str = getenv("DEFAULT_THUMB", "https://i.ibb.co/S4qFQ5fD/file-00000000768c7208af13676d08fb932c.png")
+        self.PING_IMG: str = getenv("PING_IMG", "https://i.ibb.co/S4qFQ5fD/file-00000000768c7208af13676d08fb932c.png")
+        self.START_IMG: str = getenv("START_IMG", "https://i.ibb.co/gLqjHZWW/file-00000000c0a47208af4b82e12f46af9a.png")
+        self.RADIO_IMG: str = getenv("RADIO_IMG", "https://i.ibb.co/gLqjHZWW/file-00000000c0a47208af4b82e12f46af9a.png")
 
         # Moderation
         self.EXCLUDED_USERNAMES: List[str] = getenv("EXCLUDED_USERNAMES", "").split()
