@@ -70,7 +70,7 @@ class Config:
         # Images
         self.DEFAULT_THUMB: str = getenv("DEFAULT_THUMB", "https://i.ibb.co/S4qFQ5fD/file-00000000768c7208af13676d08fb932c.png")
         self.PING_IMG: str = getenv("PING_IMG", "https://i.ibb.co/S4qFQ5fD/file-00000000768c7208af13676d08fb932c.png")
-        self.START_IMG: str = getenv("START_IMG", "https://i.ibb.co/gLqjHZWW/file-00000000c0a47208af4b82e12f46af9a.png")
+        self.START_IMG: str = getenv("START_IMG", "https://i.ibb.co/v6BN0S4k/IMG-20260615-093014-130.png")
         self.RADIO_IMG: str = getenv("RADIO_IMG", "https://i.ibb.co/gLqjHZWW/file-00000000c0a47208af4b82e12f46af9a.png")
 
         # Moderation
